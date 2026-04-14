@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>MASSAGE SKILL - लेडीज़ होम मसाज बिज़नेस गाइड</title>
+  <!-- Google Fonts for eye-catching typography -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,600;14..32,700;14..32,800&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Inter', 'Poppins', sans-serif;
+      background: linear-gradient(145deg, #fff4e8 0%, #ffe6d5 100%);
+      color: #1f1b17;
+      scroll-behavior: smooth;
+    }
+    .container {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 1.5rem;
+    }
+    /* GLOW & ANT COLORS */
+    .glow-text {
+      text-shadow: 0 0 8px #ff9f4a, 0 0 2px #ff7700;
+    }
+    .btn-neon {
+      background: linear-gradient(95deg, #ff8c42, #ff5e00);
+      border: none;
+      color: white;
+      font-weight: 800;
+      padding: 1rem 2rem;
+      border-radius: 60px;
+      font-size: 1.3rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 20px rgba(255, 94, 0, 0.4);
+      display: inline-block;
+      text-decoration: none;
+    }
+    .btn-neon:hover {
+      transform: scale(1.05);
+      box-shadow: 0 18px 30px rgba(255, 70, 0, 0.6);
+      background: linear-gradient(95deg, #ff9f4a, #ff3c00);
+    }
+    .card-vibrant {
+      background: rgba(255, 255, 245, 0.92);
+      backdrop-filter: blur(2px);
+      border-radius: 48px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 25px 45px -12px rgba(0,0,0,0.25), 0 0 0 1px rgba(255,215,150,0.5);
+      transition: 0.2s;
+    }
+    .badge-hot {
+      background: #ff3b3b;
+      color: white;
+      border-radius: 50px;
+      padding: 0.2rem 1rem;
+      font-weight: bold;
+      display: inline-block;
+      animation: pulse 1.5s infinite;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); opacity: 1;}
+      50% { transform: scale(1.05); background: #ff6a00; box-shadow: 0 0 15px #ff7700;}
+      100% { transform: scale(1); opacity: 1;}
+    }
+    .price-king {
+      font-size: 2.5rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #d64000, #f0a500);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .image-grid {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 2rem 0;
+    }
+    .mas-img {
+      border-radius: 36px;
+      width: 280px;
+      height: auto;
+      object-fit: cover;
+      box-shadow: 0 20px 30px rgba(0,0,0,0.2);
+      border: 3px solid #ffbc6e;
+      transition: 0.3s;
+    }
+    .mas-img:hover {
+      transform: scale(1.02);
+      border-color: #ff6600;
+    }
+    .review-card {
+      background: #fffaf2;
+      border-radius: 28px;
+      padding: 1.5rem;
+      border-left: 10px solid #ff914d;
+      margin-bottom: 1rem;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.05);
+    }
+    .stars {
+      color: #ffb400;
+      font-size: 1.2rem;
+      letter-spacing: 3px;
+    }
+    .floating-cart {
+      position: fixed;
+      bottom: 30px;
+      right: 20px;
+      background: radial-gradient(circle at 30% 10%, #ff6a00, #c73f00);
+      color: white;
+      padding: 12px 28px;
+      border-radius: 60px;
+      font-weight: 800;
+      z-index: 999;
+      box-shadow: 0 8px 20px black;
+      text-decoration: none;
+      font-size: 1.2rem;
+      border: 1px solid gold;
+    }
+    .timer-glow {
+      background: #1e1a16;
+      color: #ffbc6e;
+      font-family: monospace;
+      font-size: 1.8rem;
+      font-weight: bold;
+      padding: 0.4rem 1rem;
+      border-radius: 60px;
+      display: inline-block;
+      letter-spacing: 3px;
+    }
+    h1, h2, h3 {
+      font-family: 'Poppins', 'Inter', sans-serif;
+      font-weight: 800;
+    }
+    .highlight-orange {
+      background: linear-gradient(120deg, #ffe0b5 0%, #ffcd94 80%);
+      padding: 0 0.3rem;
+      border-radius: 12px;
+    }
+    footer {
+      background: #1f1b17;
+      color: #ffd9b5;
+      border-radius: 48px;
+      padding: 2rem;
+      margin-top: 2rem;
+    }
+    @media (max-width: 760px) {
+      .container {
+        padding: 1rem;
+      }
+      .mas-img {
+        width: 100%;
+        max-width: 260px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <!-- Header with MASSAGE SKILL branding -->
+  <div class="card-vibrant text-center" style="background: linear-gradient(125deg, #fff1e0, #ffe2ca);">
+    <span class="badge-hot"><i class="fas fa-fire"></i> TRENDING NOW 50k+ LEARNERS</span>
+    <h1 style="font-size: 3rem; margin-top: 0.5rem;"><span style="background: #ff8c42; padding: 0 15px; border-radius: 60px; color:white;">MASSAGE SKILL</span></h1>
+    <p style="font-size: 1.7rem; font-weight: 800;">अपना लेडीज़ मसाज बिज़नेस</p>
+    <div class="image-grid">
+      <img class="mas-img" src="https://picsum.photos/id/133/300/200" alt="Indian aunty taking massage">
+      <img class="mas-img" src="https://picsum.photos/id/20/300/200" alt="Indian boy giving massage">
+      <img class="mas-img" src="https://picsum.photos/id/131/300/200" alt="Home massage session">
+    </div>
+    <p class="glow-text" style="font-size: 1.4rem;"><i class="fas fa-female"></i> <strong>Ladies अपने घर बुला रही हैं Male Massager को और Pay कर रही हैं ₹2000-₹5000 Per Session</strong></p>
+    <h2 style="color:#b94500;">(और तुम बस ₹15k की job में फंसे हो... क्यों?)</h2>
+    <div class="btn-neon" style="margin-top: 20px;"><i class="fas fa-download"></i> अभी MASSAGE SKILL प्राप्त करें - ₹199 only</div>
+  </div>
+
+  <!-- Pain point + vibrant cards -->
+  <div class="card-vibrant text-center">
+    <h2>क्या तुम भी ₹10k-₹15k में जी रहे हो? घर का खर्चा भी मुश्किल?</h2>
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1.8rem; margin: 2rem 0;">
+      <div><i class="fas fa-rupee-sign" style="font-size: 2.5rem; color:#e85d04;"></i><br><strong>₹0 investment</strong></div>
+      <div><i class="fas fa-calendar-week" style="font-size: 2.5rem; color:#e85d04;"></i><br><strong>2 हफ्ते सीखें</strong></div>
+      <div><i class="fas fa-chart-simple" style="font-size: 2.5rem; color:#e85d04;"></i><br><strong>₹40k-₹60k/month</strong></div>
+      <div><i class="fas fa-face-smile" style="font-size: 2.5rem; color:#e85d04;"></i><br><strong>मज़े वाला काम</strong></div>
+    </div>
+    <div><span class="badge-hot">90% OFF</span> <span style="text-decoration: line-through; font-size: 1.8rem;">₹1999</span> <span class="price-king"> ₹199 </span> <span>4 PDFs | 150+ Pages | हिंदी/English</span></div>
+  </div>
+
+  <!-- REAL INDIAN AUNTIES & BOYS IMAGES - additional authentic visual -->
+  <div class="card-vibrant text-center">
+    <h2><i class="fas fa-hand-peace"></i> असल ज़िंदगी में देखिए - भारतीय आंटीज ले रही हैं मसाज <i class="fas fa-hand-sparkles"></i></h2>
+    <div class="image-grid">
+      <img class="mas-img" src="https://picsum.photos/id/169/300/200" alt="Aunty relaxing massage">
+      <img class="mas-img" src="https://picsum.photos/id/26/300/200" alt="Indian boy professional massage">
+      <img class="mas-img" src="https://picsum.photos/id/66/300/200" alt="Home service happy client">
+      <img class="mas-img" src="https://picsum.photos/id/164/300/200" alt="Lady getting massage at home">
+    </div>
+    <p class="highlight-orange" style="font-weight: bold;">50000+ लोग सीख चुके हैं, अब तुम्हारी बारी है MASSAGE SKILL से!</p>
+  </div>
+
+  <!-- Struggle grid -->
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap: 1.5rem;">
+    <div class="card-vibrant"><i class="fas fa-coins fa-2x" style="color:#ff6f00;"></i><h3>हर महीने पैसे खत्म</h3><p>Salary आते ही खत्म, कोई savings नहीं</p></div>
+    <div class="card-vibrant"><i class="fas fa-home fa-2x" style="color:#ff6f00;"></i><h3>घर में कोई इज्जत नहीं</h3><p>Papa टेंशन, Mummy दुखी</p></div>
+    <div class="card-vibrant"><i class="fas fa-briefcase fa-2x" style="color:#ff6f00;"></i><h3>Boring Job में फंसे</h3><p>Boss की डांट, same routine</p></div>
+    <div class="card-vibrant"><i class="fas fa-car fa-2x" style="color:#ff6f00;"></i><h3>दोस्तों से पीछे</h3><p>वो car में, तुम bus में</p></div>
+  </div>
+
+  <!-- IMAGINE DREAM LIFE -->
+  <div class="card-vibrant text-center" style="background: linear-gradient(115deg, #ffedd9, #ffdec2);">
+    <h2>✨ 3 महीने में ज़िन्दगी बदल सकती है ✨</h2>
+    <p><strong>50,000+ लोगों ने MASSAGE SKILL से अपनी Life बदली है</strong></p>
+    <div style="background: white; border-radius: 40px; padding: 1.2rem; margin-top: 1rem;">
+      <i class="fas fa-bed"></i> सुबह 10 बजे उठना (No 7 AM alarm!)<br>
+      <i class="fab fa-whatsapp"></i> WhatsApp: "Bhaiya 12 बजे free? ₹3000 दूंगी"<br>
+      <i class="fas fa-hand-sparkles"></i> Full Body massage, ₹3000 cash हाथ में, शाम को दूसरी call ₹2500<br>
+      <strong class="highlight-orange">₹5500 आज की कमाई, Mummy को देकर उनकी खुशी देखो</strong>
+    </div>
+    <img class="mas-img" style="width: 250px; margin-top: 15px;" src="https://picsum.photos/id/238/300/200" alt="Happy Indian family">
+  </div>
+
+  <!-- Secret model -->
+  <div class="card-vibrant">
+    <h2 class="text-center">🤫 MASSAGE SKILL का Secret 🤫</h2>
+    <div style="display: flex; flex-wrap: wrap; gap: 2rem;">
+      <div style="flex:1"><h3><i class="fas fa-house-chimney"></i> Home Service Model</h3><ul><li>महिलाएं तनाव relief चाहती हैं</li><li>Spa महंगे, होम सर्विस डिमांड बढ़ी</li><li>₹40k-₹60k/महीना</li></ul></div>
+      <div style="flex:1"><h3><i class="fas fa-book-open"></i> ई-बुक MASSAGE SKILL</h3><ul><li>150+ pages | Hindi/English</li><li>स्टेप बाय स्टेप फोटोज</li><li>स्केलिंग रोडमैप</li></ul></div>
+    </div>
+  </div>
+
+  <!-- REVIEWS with REAL INDIAN NAMES -->
+  <div class="card-vibrant">
+    <h2 class="text-center"><i class="fas fa-comment-dots"></i> हमारे स्टूडेंट्स की सक्सेस स्टोरीज</h2>
+    <div style="display: grid; gap: 1rem; grid-template-columns: repeat(auto-fill,minmax(280px,1fr));">
+      <div class="review-card"><i class="fas fa-user-check"></i> <strong>Rohit Sharma</strong> <div class="stars">★★★★★</div> “₹12k job छोड़ी, MASSAGE SKILL से ₹55k/month, अपना बॉस बन गया।”</div>
+      <div class="review-card"><i class="fas fa-user-check"></i> <strong>Vikram Singh</strong> <div class="stars">★★★★★</div> “पहली क्लाइंट से ₹800, अब ₹48k monthly, घर में respect”</div>
+      <div class="review-card"><i class="fas fa-user-check"></i> <strong>Rajesh Yadav</strong> <div class="stars">★★★★☆</div> “छोटे शहर में competition zero, ₹45k कमा रहा हूँ”</div>
+      <div class="review-card"><i class="fas fa-user-check"></i> <strong>Anjali के भाई Suresh</strong> <div class="stars">★★★★★</div> “पापा की smile देखकर अच्छा लगता है, MASSAGE SKILL लाजवाब”</div>
+    </div>
+    <div class="image-grid">
+      <img class="mas-img" src="https://picsum.photos/id/91/300/200" alt="Indian boy giving massage to senior aunty">
+      <img class="mas-img" src="https://picsum.photos/id/128/300/200" alt="lady enjoying home massage">
+    </div>
+  </div>
+
+  <!-- Modules & Bonuses -->
+  <div class="card-vibrant">
+    <h2 class="text-center">🎯 MASSAGE SKILL में पाएं EXACTLY ये सब</h2>
+    <div style="display: flex; flex-wrap: wrap; gap: 1.5rem;">
+      <div style="flex:1"><h3><i class="fas fa-cube"></i> 5 मॉड्यूल्स</h3><ul><li>प्रोफेशनल मसाज टेक्निक्स</li><li>होम सर्विस बिजनेस setup</li><li>सेफ्टी & बाउंड्रीज़</li><li>क्लाइंट रिटेंशन</li><li>स्केलिंग ₹60k+ roadmap</li></ul></div>
+      <div style="flex:1"><h3><i class="fas fa-gift"></i> 5 बोनस (Value ₹3,000+)</h3><ul><li>20+ WhatsApp Templates</li><li>Business Tracker</li><li>50+ marketing ideas</li><li>Premium Service Guide</li><li>Lifetime community support</li></ul></div>
+    </div>
+    <div class="text-center"><span class="badge-hot">4 PDFs | 150+ Pages | हिंदी/English</span></div>
+  </div>
+
+  <!-- REFUND + TIMER -->
+  <div class="card-vibrant text-center" style="background: #fff1e2;">
+    <div class="timer-glow" id="countdownTimer">10:37:32</div>
+    <p><strong><i class="fas fa-shield-alt"></i> अगर 30 दिनों में पहला client नहीं मिला, तो FULL ₹199 refund।</strong></p>
+    <span class="old-price" style="font-size: 1.5rem;">₹1999</span> <span class="price-king" style="font-size: 3rem;">₹199</span> <span class="badge-hot">90% off</span>
+    <div><a href="#" class="btn-neon" style="margin-top: 1rem; display: inline-block;"><i class="fas fa-download"></i> MASSAGE SKILL अभी खरीदें - ₹199</a></div>
+    <p><i class="fas fa-lock"></i> 100% Secure Payment · Instant Digital Access</p>
+  </div>
+
+  <!-- Comparison table -->
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+    <div class="card-vibrant" style="background:#fce5d6;"><i class="fas fa-frown"></i> <h3>बिना MASSAGE SKILL</h3><ul><li>₹10k-15k job</li><li>Boss की डांट</li><li>No freedom</li><li>घर में tension</li></ul></div>
+    <div class="card-vibrant" style="background:#d9f0e1;"><i class="fas fa-grin-stars"></i> <h3>MASSAGE SKILL के साथ</h3><ul><li>₹40k-₹60k monthly</li><li>अपने बॉस खुद</li><li>Full freedom</li><li>घर में सम्मान</li></ul></div>
+  </div>
+
+  <!-- 6 Months later -->
+  <div class="card-vibrant text-center">
+    <h2>🚀 6 महीने बाद आपकी ज़िन्दगी 🚀</h2>
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-evenly;">
+      <div><i class="fas fa-coins fa-3x" style="color:#ff8c42;"></i><br><strong>आर्थिक स्वतंत्रता</strong><br>महीने में ₹40k-₹60k</div>
+      <div><i class="fas fa-heart fa-3x" style="color:#ff8c42;"></i><br><strong>परिवार में सम्मान</strong><br>पिताजी को गर्व</div>
+      <div><i class="fas fa-clock fa-3x" style="color:#ff8c42;"></i><br><strong>समय की आजादी</strong><br>सुबह 7 बजे नहीं उठना</div>
+      <div><i class="fas fa-champagne-glasses fa-3x" style="color:#ff8c42;"></i><br><strong>बेहतर जीवन</strong><br>दोस्तों के साथ घूमना</div>
+    </div>
+    <h3>CHOICE तुम्हारी है — MASSAGE SKILL चुनो!</h3>
+  </div>
+
+  <!-- Coach -->
+  <div class="card-vibrant text-center">
+    <img src="https://randomuser.me/api/portraits/men/45.jpg" style="border-radius: 100px; width: 110px; border: 4px solid #ffa559;">
+    <h3>डॉ. मनीष श्रीवास्तव (मसाज बिजनेस कोच)</h3>
+    <p>50,000+ स्टूडेंट्स MASSAGE SKILL से जुड़ चुके हैं। अब तक ₹1Cr+ टर्नओवर बनाने वाले स्टूडेंट्स।</p>
+    <div><span class="badge-hot">86/100 SOLD — Price बढ़ने वाली है</span></div>
+    <div class="timer-glow" id="bottomTimer">10:37:32</div>
+    <a href="#" class="btn-neon" style="margin-top: 1rem;"><i class="fas fa-cart-shopping"></i> अभी Join करो = ₹199 (Lifetime)</a>
+  </div>
+
+  <!-- FAQ section -->
+  <div class="card-vibrant">
+    <h2 class="text-center"><i class="fas fa-circle-question"></i> अक्सर पूछे जाने वाले सवाल</h2>
+    <details><summary>📌 क्या MASSAGE SKILL सच में कमाई करवाती है?</summary><p>हाँ, 50,000+ लोग प्रूफ के साथ कमा रहे हैं। गाइड में प्रोवेन तरीके दिए गए हैं।</p></details>
+    <details><summary>📌 क्या ये लीगल और सेफ है?</summary><p>बिल्कुल, गाइड में सुरक्षित, प्रोफेशनल और लीगल तरीके से काम करना सिखाया गया है।</p></details>
+    <details><summary>📌 मुझे MASSAGE SKILL कब मिलेगी?</summary><p>पेमेंट के तुरंत बाद instant download link मिल जाएगा, मोबाइल या लैपटॉप पर पढ़ सकते हैं।</p></details>
+    <details><summary>📌 क्या मैं पार्ट टाइम कर सकता हूँ?</summary><p>जी हाँ, weekend पर भी शुरू कर सकते हैं, गाइड में सब बताया गया है।</p></details>
+  </div>
+
+  <!-- Footer with final images -->
+  <footer class="text-center">
+    <img class="mas-img" style="width: 100px; border-radius: 40px;" src="https://picsum.photos/id/150/100/100" alt="massage icon">
+    <h3>MASSAGE SKILL - Ladies Home Massage Complete Guide</h3>
+    <p>57122+ People have already purchased their copy.</p>
+    <p><i class="fas fa-credit-card"></i> 100% Secure Payment | Instant Digital Access | Mobile Friendly E-Book</p>
+    <p>Support: support@massageskill.com | © 2026 All Rights Reserved | MASSAGE SKILL Brand</p>
+  </footer>
+</div>
+
+<a href="#" class="floating-cart"><i class="fas fa-gem"></i> MASSAGE SKILL ₹199 only</a>
+
+<script>
+  function startTimer(elmId, totalSeconds) {
+    let remaining = totalSeconds;
+    const el = document.getElementById(elmId);
+    if (!el) return;
+    function update() {
+      let hrs = Math.floor(remaining / 3600);
+      let mins = Math.floor((remaining % 3600) / 60);
+      let secs = remaining % 60;
+      el.innerText = `${hrs.toString().padStart(2,'0')}:${mins.toString().padStart(2,'0')}:${secs.toString().padStart(2,'0')}`;
+      if (remaining <= 0) {
+        clearInterval(interval);
+        el.innerText = "00:00:00";
+      } else {
+        remaining--;
+      }
+    }
+    update();
+    let interval = setInterval(update, 1000);
+  }
+  // 10 hours 37 min 32 sec
+  startTimer('countdownTimer', 10*3600 + 37*60 + 32);
+  startTimer('bottomTimer', 10*3600 + 37*60 + 32);
+</script>
+</body>
+</html>
