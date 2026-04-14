@@ -167,6 +167,14 @@
 </head>
 <body>
 
+  <div style="position:fixed; top:0; left:0; width:100%; background:#ff3b3b; color:white; text-align:center; padding:10px; font-weight:800; z-index:9999;">
+  ⚡ LIMITED OFFER: ₹199 Only | Offer Ends Soon
+</div>
+
+  body {
+  margin-top: 50px;
+}
+  
 <div class="container">
   <!-- Header with MASSAGE SKILL branding -->
   <div class="card-vibrant text-center" style="background: linear-gradient(125deg, #fff1e0, #ffe2ca);">
@@ -180,7 +188,8 @@
     </div>
     <p class="glow-text" style="font-size: 1.4rem;"><i class="fas fa-female"></i> <strong>Ladies अपने घर बुला रही हैं Male Massager को और Pay कर रही हैं ₹2000-₹5000 Per Session</strong></p>
     <h2 style="color:#b94500;">(और तुम बस ₹15k की job में फंसे हो... क्यों?)</h2>
-    <div class="btn-neon" style="margin-top: 20px;"><i class="fas fa-download"></i> अभी MASSAGE SKILL प्राप्त करें - ₹199 only</div>
+    <a href="https://superprofile.bio/vp/697990ec8a516100149d5ac9" target="_blank" class="btn-neon" style="margin-top: 20px;">
+  <i class="fas fa-download"></i> अभी MASSAGE SKILL प्राप्त करें - ₹199 only</a>
   </div>
 
   <!-- Pain point + vibrant cards -->
@@ -294,8 +303,17 @@
 
     <h3>डॉ. मनीष श्रीवास्तव (मसाज बिजनेस कोच)</h3>
     <p>50,000+ स्टूडेंट्स MASSAGE SKILL से जुड़ चुके हैं। अब तक ₹1Cr+ टर्नओवर बनाने वाले स्टूडेंट्स।</p>
-    <div><span class="badge-hot">86/100 SOLD — Price बढ़ने वाली है</span></div>
+    <div><span class="badge-hot"><span id="stockLeft">86</span>/100 SOLD — Price बढ़ने वाली है</span></div>
     <div class="timer-glow" id="bottomTimer">10:37:32</div>
+<script>
+let stock = 86;
+setInterval(() => {
+  if(stock > 12){
+    stock--;
+    document.getElementById("stockLeft").innerText = stock;
+  }
+}, 8000);
+</script>
     <a href="https://superprofile.bio/vp/697990ec8a516100149d5ac9" target="_blank" class="btn-neon" style="margin-top: 1rem;"><i class="fas fa-cart-shopping"></i> अभी Join करो = ₹199 (Lifetime)</a>
   </div>
 
@@ -344,5 +362,24 @@
   startTimer('countdownTimer', 10*3600 + 37*60 + 32);
   startTimer('bottomTimer', 10*3600 + 37*60 + 32);
 </script>
+  <div id="popup" style="position:fixed; bottom:20px; left:20px; background:#fff; padding:10px 15px; border-radius:10px; box-shadow:0 5px 15px rgba(0,0,0,0.2); display:none; z-index:9999;">
+  🔥 <strong id="buyerName"></strong> from Delhi just purchased!
+</div>
+
+<script>
+const names = ["Rahul", "Amit", "Suresh", "Vikas", "Rohit"];
+setInterval(() => {
+  const popup = document.getElementById("popup");
+  const name = names[Math.floor(Math.random() * names.length)];
+  document.getElementById("buyerName").innerText = name;
+  popup.style.display = "block";
+  setTimeout(() => popup.style.display = "none", 3000);
+}, 7000);
+</script>
 </body>
 </html>
+<script>
+function goToPayment() {
+  window.open("https://superprofile.bio/vp/697990ec8a516100149d5ac9", "_blank");
+}
+</script>
