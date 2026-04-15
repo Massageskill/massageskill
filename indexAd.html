@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,7 +15,6 @@ body {
   color:#222;
 }
 
-/* Container */
 .container {
   max-width:1000px;
   margin:auto;
@@ -23,66 +22,51 @@ body {
   text-align:center;
 }
 
-/* Button */
+h1 {
+  font-size:32px;
+}
+
+.sub {
+  color:#666;
+  margin-top:10px;
+}
+
 .btn {
   background:#ff5e00;
   color:white;
   padding:15px 25px;
   border-radius:50px;
   font-weight:700;
-  border:none;
   cursor:pointer;
+  border:none;
   margin-top:20px;
 }
 
-/* Section */
 .section {
   background:white;
-  padding:25px;
-  margin-top:25px;
+  padding:20px;
+  margin-top:20px;
   border-radius:15px;
-  box-shadow:0 5px 15px rgba(0,0,0,0.08);
 }
 
-/* Problem Cards */
-.problem-section {
+.image-row {
   display:flex;
-  flex-wrap:wrap;
-  gap:20px;
   justify-content:center;
+  gap:15px;
+  flex-wrap:wrap;
+  margin-top:15px;
 }
 
-.problem-card {
-  width:22%;
-  background:#fff;
-  padding:15px;
-  border-radius:12px;
-  text-align:center;
-  box-shadow:0 5px 15px rgba(0,0,0,0.1);
-}
-
-.problem-card img {
-  width:100%;
+.image-row img {
+  width:30%;
   border-radius:10px;
 }
 
-.problem-title {
-  font-weight:700;
-  margin-top:10px;
-}
-
-.problem-desc {
-  font-size:14px;
-  color:#555;
-}
-
-/* Footer */
 .footer {
   font-size:14px;
   margin-top:30px;
 }
 
-/* Floating Button */
 .floating-btn {
   position:fixed;
   bottom:20px;
@@ -91,12 +75,10 @@ body {
   color:white;
   padding:12px 20px;
   border-radius:50px;
-  z-index:999;
 }
 
-/* Mobile */
 @media(max-width:768px){
-  .problem-card {
+  .image-row img {
     width:90%;
   }
 }
@@ -108,53 +90,32 @@ body {
 <div class="container">
 
 <!-- HERO -->
-<h1>Professional Massage Training Course</h1>
-<p>सीखें Massage Skills और शुरू करें अपना Home Service Business</p>
+<h1>Learn Professional Massage Skills</h1>
+<p class="sub">Step-by-step training to start your own home service business</p>
 
 <button class="btn" onclick="goToPayment()">Get Access @ ₹199</button>
 
-<p>✔ Beginner Friendly | ✔ Step-by-Step Guide | ✔ Instant Access</p>
+<p class="sub">✔ Beginner Friendly | ✔ Practical Learning | ✔ Instant Access</p>
 
-<!-- 🔥 PROBLEM SECTION -->
+<!-- IMAGES FIXED IN ONE LINE -->
 <div class="section">
-<h2>क्या आप इन समस्याओं से परेशान हैं?</h2>
+<h2>Course Preview</h2>
 
-<div class="problem-section">
-
-  <div class="problem-card">
-    <img src="https://helpguide07.github.io/gotopage/indexss_files/ChatGPT-Image-Feb-4-2026-12_25_02-PM-1024x683.png">
-    <div class="problem-title">💸 हर महीने पैसे खत्म</div>
-    <div class="problem-desc">Salary आते ही खत्म, savings नहीं</div>
-  </div>
-
-  <div class="problem-card">
-    <img src="https://helpguide07.github.io/gotopage/indexss_files/ChatGPT-Image-Feb-4-2026-12_34_07-PM-1024x683.png">
-    <div class="problem-title">😔 घर में इज्जत नहीं</div>
-    <div class="problem-desc">Family pressure और respect की कमी</div>
-  </div>
-
-  <div class="problem-card">
-    <img src="https://helpguide07.github.io/gotopage/indexss_files/ChatGPT-Image-Feb-4-2026-12_38_04-PM-1024x683.png">
-    <div class="problem-title">💼 Boring Job</div>
-    <div class="problem-desc">Same routine, no growth</div>
-  </div>
-
-  <div class="problem-card">
-    <img src="https://helpguide07.github.io/gotopage/indexss_files/ChatGPT-Image-Feb-4-2026-12_44_11-PM-1024x683.png">
-    <div class="problem-title">😟 पीछे रह गए</div>
-    <div class="problem-desc">Friends आगे बढ़ रहे हैं</div>
-  </div>
-
-</div>
+<div class="image-row">
+  <img src="./img/logo.png" alt="Preview 1">
+  <img src="./img/logo.png" alt="Preview 2">
+  <img src="./img/logo.png" alt="Preview 3">
 </div>
 
-<!-- WHAT YOU LEARN -->
+</div>
+
+<!-- CONTENT -->
 <div class="section">
-<h2>आप क्या सीखेंगे</h2>
-<p>✔ Massage techniques</p>
-<p>✔ Client handling basics</p>
-<p>✔ Home service setup</p>
-<p>✔ Skill-based earning opportunity</p>
+<h2>What You Will Learn</h2>
+<p>✔ Basic massage techniques</p>
+<p>✔ Client handling fundamentals</p>
+<p>✔ Home service setup guidance</p>
+<p>✔ Service workflow understanding</p>
 </div>
 
 <!-- OFFER -->
@@ -166,16 +127,16 @@ body {
 <button class="btn" onclick="goToPayment()">Enroll Now</button>
 
 <p style="font-size:12px; margin-top:10px;">
-⚠️ This is an educational course. Results depend on your effort.
+⚠️ Educational course. Results depend on your effort.
 </p>
 </div>
 
 <!-- TRUST -->
 <div class="section">
-<h2>Trust & Safety</h2>
-<p>🔒 Secure Payment</p>
-<p>📞 Instant Access</p>
-<p>📘 Educational Content</p>
+<h2>Why Choose This Course?</h2>
+<p>✔ Beginner friendly</p>
+<p>✔ Easy to follow</p>
+<p>✔ Instant access</p>
 </div>
 
 <!-- FOOTER -->
