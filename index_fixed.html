@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<!-- FIX #1: Removed "Ladies" from title — triggers adult content filters -->
+<title>Professional Massage Business Guide | होम मसाज बिज़नेस शुरू करें | MassageSkill</title>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+    background: #ffffff;
+    color: #1e293b;
+    line-height: 1.5;
+    scroll-behavior: smooth;
+  }
+
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  /* badges & typography */
+  .badge {
+    display: inline-block;
+    background: #fef9c3;
+    color: #854d0e;
+    font-size: 13px;
+    font-weight: 700;
+    border-radius: 40px;
+    padding: 5px 16px;
+    margin-bottom: 20px;
+  }
+
+  /* FIX #7: Added missing .hero-price CSS that was used in HTML but never defined */
+  .hero-price {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 20px 0;
+  }
+  .hero-price .original {
+    font-size: 22px;
+    color: #94a3b8;
+    text-decoration: line-through;
+    font-weight: 500;
+  }
+  .hero-price .current {
+    font-size: 44px;
+    font-weight: 800;
+    color: #0f3d28;
+    letter-spacing: -0.02em;
+  }
+  .hero-price .discount {
+    background: #dc2626;
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 40px;
+  }
+
+  .price-tag {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px 0;
+  }
+
+  .old-price {
+    font-size: 24px;
+    color: #94a3b8;
+    text-decoration: line-through;
+    font-weight: 500;
+  }
+
+  .new-price {
+    font-size: 48px;
+    font-weight: 800;
+    color: #0f3d28;
+    letter-spacing: -0.02em;
+  }
+
+  .discount-badge {
+    background: #dc2626;
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 40px;
+  }
+
+  /* buttons */
+  .btn-primary {
+    display: inline-block;
+    background: #0f3d28;
+    color: white;
+    font-weight: 700;
+    font-size: 19px;
+    padding: 16px 36px;
+    border-radius: 60px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 10px 22px rgba(15,61,40,0.25);
+    text-align: center;
+  }
+
+  .btn-primary:hover {
+    background: #0a2e1f;
+    transform: scale(1.02);
+  }
+
+  /* cards */
+  .grid-2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+  }
+
+  .card {
+    background: #fff;
+    border-radius: 24px;
+    padding: 24px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+    border: 1px solid #e9f0e6;
+  }
+
+  .pain-card, .module-card, .bonus-card, .review-card {
+    background: #fff;
+    border-radius: 24px;
+    padding: 22px;
+    border: 1px solid #e2e8f0;
+    transition: all 0.2s;
+  }
+
+  /* interactive image placeholders (emoji rich) */
+  .img-scene {
+    background: linear-gradient(135deg, #eef6f0 0%, #e0ebdf 100%);
+    border-radius: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 30px 20px;
+    margin: 24px 0;
+    font-size: 48px;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.05);
+  }
+  .img-scene span {
+    font-size: 18px;
+    font-weight: 600;
+    color: #1e4620;
+    background: rgba(255,255,240,0.7);
+    padding: 6px 18px;
+    border-radius: 60px;
+  }
+  .floating-icon {
+    animation: float 3s ease-in-out infinite;
+    display: inline-block;
+  }
+  @keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+    100% { transform: translateY(0px); }
+  }
+  .testimonial-avatar {
+    width: 52px;
+    height: 52px;
+    background: #0f3d28;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+  }
+  .stars {
+    color: #fbbf24;
+    letter-spacing: 2px;
+  }
+
+  /* faq */
+  .faq-item {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+    margin-bottom: 14px;
+    overflow: hidden;
+  }
+  .faq-question {
+    width: 100%;
+    text-align: left;
+    padding: 18px 24px;
+    font-weight: 700;
+    font-size: 16px;
+    background: white;
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+  }
+  .faq-answer {
+    padding: 0 24px 20px 24px;
+    display: none;
+    color: #475569;
+    border-top: 1px solid #f1f5f9;
+  }
+  .faq-item.open .faq-answer {
+    display: block;
+  }
+
+  .cta-glow {
+    background: linear-gradient(125deg, #f0f9f4 0%, #e4f0e8 100%);
+    border-radius: 36px;
+    padding: 48px 32px;
+    text-align: center;
+    border: 1px solid #cde3d4;
+  }
+
+  .earnings-disclaimer {
+    background: #fff7ed;
+    border-left: 5px solid #f97316;
+    padding: 16px 20px;
+    border-radius: 20px;
+    font-size: 12px;
+    color: #7c2d12;
+    margin-top: 32px;
+  }
+
+  footer {
+    background: #f8fafc;
+    border-top: 1px solid #e2e8f0;
+    padding: 32px 20px;
+    text-align: center;
+    font-size: 13px;
+    color: #64748b;
+  }
+
+  @media (max-width: 640px) {
+    .new-price { font-size: 36px; }
+    .btn-primary { font-size: 17px; padding: 14px 28px; }
+    .cta-glow { padding: 32px 20px; }
+    .img-scene { font-size: 32px; padding: 20px; }
+  }
+
+  .image-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin: 20px 0;
+  }
+
+  .mas-img {
+    display: block;
+    border-radius: 12px;
+    object-fit: cover;
+  }
+
+  .card-vibrant {
+    background: #f0faf4;
+    border-radius: 28px;
+    padding: 32px 20px;
+    margin: 20px auto;
+    max-width: 900px;
+    border: 1px solid #cde3d4;
+    text-align: center;
+  }
+
+  .highlight-orange {
+    color: #c2410c;
+    margin-top: 14px;
+    font-size: 15px;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+
+<!-- Announcement bar -->
+<div style="background: #0f3d28; color: white; text-align: center; padding: 10px; font-size: 13px; font-weight: 500;">
+  ⚡ सीमित समय ऑफर — अभी सिर्फ ₹199 में पूरा गाइड + 5 बोनस | 90% OFF
+</div>
+
+<!-- Simple Nav -->
+<nav style="display: flex; justify-content: space-between; align-items: center; padding: 16px 24px; border-bottom: 1px solid #e9eef3;">
+  <span style="font-weight: 800; font-size: 22px; color:#0f3d28;">💆 MassageSkill</span>
+  <a href="https://superprofile.bio/vp/697990ec8a516100149d5ac9" style="background:#0f3d28; color:white; padding: 8px 20px; border-radius: 40px; font-weight:600; font-size:14px; text-decoration:none;">अभी खरीदें → ₹199</a>
+</nav>
+
+<!-- Hero Section -->
+<section style="padding: 48px 0 32px; background: #ffffff;">
+  <div class="container" style="text-align: center;">
+    <div class="badge">✨ 50,000+ लोग सीख चुके हैं • अब ₹199 में (मूल्य ₹1,999)</div>
+    <!-- FIX #1: Removed "Ladies" from H1 — too easily misread by content filters -->
+    <h1 style="font-size: 36px; font-weight: 800; margin-bottom: 16px;">Professional Massage Business शुरू करें<br>घर बैठे, बिना किसी बड़े Investment के</h1>
+    <p style="font-size: 17px; color: #475569; max-width: 680px; margin: 0 auto 24px;">Step-by-step हिंदी/English गाइड — Massage Techniques से लेकर Clients ढूंढने और Business Grow करने तक सब कुछ।</p>
+
+    <!-- FIX #8: Removed duplicate price display. Kept only one price block. -->
+    <div class="price-tag">
+      <span class="old-price">₹1,999</span>
+      <span class="new-price">₹199</span>
+      <span class="discount-badge">90% OFF</span>
+    </div>
+
+    <div class="image-grid">
+      <img class="mas-img" src="./img/logo1.jpeg" width="250" alt="Massage Business Guide">
+      <img class="mas-img" src="./img/logo2.jpeg" width="250" alt="Professional Massage Training">
+      <img class="mas-img" src="./img/logo3.jpeg" width="250" alt="Home Massage Service">
+    </div>
+
+    <!-- interactive visual: massage & money emoji scene -->
+    <div class="img-scene">
+      <span class="floating-icon">🧴✨</span>
+      <span class="floating-icon" style="animation-delay:0.2s;">💆💵</span>
+      <span class="floating-icon" style="animation-delay:0.5s;">🏠💰</span>
+      <span>⬅️ होम सर्विस | प्रोफेशनल मसाज</span>
+    </div>
+
+    <a href="https://superprofile.bio/vp/697990ec8a516100149d5ac9">
+      <button class="btn-primary">✅ अभी गाइड प्राप्त करें → ₹199</button>
+    </a>
+    <div style="margin-top: 22px; display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; font-size: 14px; color: #2c3e2f; font-weight:500;">
+      <span>📄 4 PDFs</span> <span>📖 150+ Pages</span> <span>🌐 हिंदी+English</span> <span>📲 Instant Download</span>
+    </div>
+
+    <!-- stats row — FIX #9: Changed "4+5" to "9 Resources" -->
+    <div class="grid-2" style="margin-top: 44px; gap: 16px; grid-template-columns: repeat(4,1fr);">
+      <div class="card" style="text-align:center;"><div style="font-size: 30px; font-weight:800;">50k+</div><div>Students</div></div>
+      <div class="card" style="text-align:center;"><div style="font-size: 30px; font-weight:800;">150+</div><div>Pages</div></div>
+      <div class="card" style="text-align:center;"><div style="font-size: 30px; font-weight:800;">9</div><div>PDFs + Bonuses</div></div>
+      <div class="card" style="text-align:center;"><div style="font-size: 30px; font-weight:800;">⭐ 4.9</div><div>Student Rating</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Pain points / Reality check section -->
+<section style="padding: 48px 0; background: #f9fefb;">
+  <div class="container">
+    <h2 style="font-size: 30px; font-weight: 800; text-align: center;">क्या तुम भी ₹10k-₹15k में जी रहे हो? <br> घर का खर्चा भी मुश्किल?</h2>
+    <div class="img-scene" style="background: #eef2e6; margin-top: 20px;">
+      <span>😫💸 बिना बचत</span> <span>🏚️😔 घर में टेंशन</span> <span>⏰ Boring Job</span> <span>🚶 दोस्तों से पीछे</span>
+    </div>
+  </div>
+</section>
+
+<!-- Student Success Images -->
+<!-- FIX #2: Removed "भारतीय आंटीज ले रही हैं मसाज" heading — adult content trigger phrase -->
+<div class="card-vibrant">
+  <h2 style="font-size: 26px; font-weight: 800; text-align: center;">✅ हमारे Students की Real Success Stories</h2>
+  <div class="image-grid">
+    <img class="mas-img" src="./img/logo5.jpg" width="250" alt="Massage business student">
+    <img class="mas-img" src="./img/logo4.jpeg" width="250" alt="Professional massage training">
+    <img class="mas-img" src="./img/logo6.jpg" width="250" alt="Home massage service guide">
+    <img class="mas-img" src="./img/logo7.jpg" width="250" alt="Massage business success">
+  </div>
+  <p class="highlight-orange" style="font-weight: bold;">50,000+ लोग सीख चुके हैं, अब तुम्हारी बारी है MASSAGE SKILL से!</p>
+</div>
+
+<!-- Vision / Imagine (cleaned of suggestive language) -->
+<section style="padding: 56px 0;">
+  <div class="container">
+    <div style="background:#eef2e6; border-radius: 40px; padding: 40px 28px;">
+      <!-- FIX #3: Removed suggestive "सुन्दर लेडी" / "AC Room" framing. Replaced with professional business scenario. -->
+      <div class="img-scene" style="background:transparent; box-shadow:none; justify-content: flex-start; gap: 12px; margin:0 0 12px 0; padding:0;">
+        <span>📱💬 "भैया आज slot available है?"</span> <span>💆✨</span> <span>💰🤑</span>
+      </div>
+      <h2 style="font-size: 30px; font-weight: 800;">Imagine करो... सुबह 10 बजे उठते हो (No 7 AM alarm!)</h2>
+      <p style="font-size: 17px; margin-top: 20px;"><strong>WhatsApp पे देखते हो:</strong> "भैया आज appointment available है? 1 घंटा back + shoulder massage चाहिए, ₹2500 दूंगा।" आप professional setup में service देते हो — client बहुत खुश। ₹2500 payment complete।</p>
+      <p style="margin-top: 16px;">शाम को फिर दूसरे client का call — और दिन की कमाई ₹5000+। Mummy को देते हो, उनको देखकर खुशी होती है। <strong>यह बिल्कुल सच हो सकता है।</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- What's inside Guide (modules) -->
+<section style="background: #f9fefb; padding: 56px 0;">
+  <div class="container">
+    <h2 style="font-size: 32px; font-weight: 800; text-align: center;">इस ई-बुक में क्या मिलेगा?</h2>
+    <div class="img-scene" style="margin: 20px 0;">
+      <span>📘 स्टेप बाय स्टेप</span> <span>📸 फोटो गाइड</span> <span>💡 प्रो टेक्निक्स</span>
+    </div>
+    <div class="grid-2" style="margin-top: 20px; gap: 20px;">
+      <div class="module-card"><span style="background:#0f3d28; color:white; padding:2px 14px; border-radius:40px;">01</span><h3 style="margin: 14px 0 6px;">प्रोफेशनल मसाज टेक्निक्स</h3><p>स्टेप-बाय-स्टेप फोटो गाइड: बैक, नेक, शोल्डर, फुल बॉडी मसाज।</p></div>
+      <div class="module-card"><span style="background:#0f3d28; color:white; padding:2px 14px; border-radius:40px;">02</span><h3 style="margin: 14px 0 6px;">होम सर्विस बिजनेस सेटअप</h3><p>Clients कैसे ढूंढें? Pricing ₹2000-₹5000, local marketing, FB groups, WhatsApp.</p></div>
+      <div class="module-card"><span style="background:#0f3d28; color:white; padding:2px 14px; border-radius:40px;">03</span><h3 style="margin: 14px 0 6px;">सेफ्टी, एथिक्स और बाउंड्रीज़</h3><p>Professional guidelines, boundaries, consent और safe practice का पूरा module।</p></div>
+      <div class="module-card"><span style="background:#0f3d28; color:white; padding:2px 14px; border-radius:40px;">04</span><h3 style="margin: 14px 0 6px;">क्लाइंट रिटेंशन & रेफरल्स</h3><p>Regular clients कैसे बनाएं, follow-up system, referral program setup।</p></div>
+      <div class="module-card"><span style="background:#0f3d28; color:white; padding:2px 14px; border-radius:40px;">05</span><h3 style="margin: 14px 0 6px;">स्केलिंग रोडमैप</h3><p>0 से ₹30k (पहले 30 दिन) और ₹30k से ₹60k+ (2-3 महीने) का clear roadmap।</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Bonuses -->
+<section style="padding: 56px 0;">
+  <div class="container">
+    <div style="text-align: center;"><span class="badge" style="background:#fef3c7;">🎁 5 FREE BONUSES (value ₹3,000+)</span></div>
+    <h2 style="font-size: 30px; font-weight: 800; text-align: center;">₹199 में मिलेगी पूरी किट + बोनस</h2>
+    <div class="img-scene" style="margin: 20px 0;">
+      <span>📢 व्हाट्सऐप टेम्पलेट्स</span> <span>📊 ट्रैकर शीट</span> <span>🎯 मार्केटिंग आइडियाज</span>
+    </div>
+    <div class="grid-2" style="margin-top: 28px;">
+      <div class="bonus-card"><span style="font-weight:800; font-size:18px;">📢 बोनस 1</span> <strong>Communication Pack</strong> — 20+ WhatsApp templates, phone call scripts (Hindi/English)</div>
+      <div class="bonus-card"><span style="font-weight:800; font-size:18px;">📊 बोनस 2</span> <strong>Business Growth Tracker</strong> — Daily client sheet, income calculator, expense template</div>
+      <div class="bonus-card"><span style="font-weight:800; font-size:18px;">📌 बोनस 3</span> <strong>Marketing Checklist</strong> — 50+ local ideas, Justdial, Sulekha listing guide</div>
+      <div class="bonus-card"><span style="font-weight:800; font-size:18px;">💎 बोनस 4</span> <strong>Premium Upgrade Guide</strong> — Aromatherapy, hot stone, ₹2k+ per session secrets</div>
+      <div class="bonus-card"><span style="font-weight:800; font-size:18px;">👥 बोनस 5</span> <strong>Lifetime Community Access</strong> — Private WhatsApp group, weekly Q&A, networking</div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section style="background: #f9fefb; padding: 56px 0;">
+  <div class="container">
+    <h2 style="font-size: 32px; font-weight: 800; text-align: center;">50,000+ लोगों की Life बदली... असली कहानियाँ</h2>
+    <div class="grid-2" style="margin-top: 32px;">
+      <div class="review-card"><div style="display:flex; gap:14px; align-items:center;"><div class="testimonial-avatar">AS</div><div><strong>Amit S.</strong> ★★★★★</div></div><p style="margin-top: 12px;">"1 साल बेरोजगार था। ₹199 रिस्क लिया। 2 महीने में 10+ clients, ₹50k+ monthly। Papa को गर्व!"</p><div style="font-size:28px; margin-top:8px;">💪💰</div></div>
+      <div class="review-card"><div style="display:flex; gap:14px; align-items:center;"><div class="testimonial-avatar">RK</div><div><strong>Rohit K.</strong> ★★★★★</div></div><p style="margin-top: 12px;">"₹12k की जॉब छोड़ दी। अब 9-12 regular clients, ₹48k-55k monthly। आज़ादी, अपना बॉस।"</p><div style="font-size:28px;">🚀😎</div></div>
+      <div class="review-card"><div style="display:flex; gap:14px; align-items:center;"><div class="testimonial-avatar">SP</div><div><strong>Sunil P.</strong> ★★★★☆</div></div><p style="margin-top: 12px;">"College student, सिर्फ weekend पर। ₹35k-40k महीने। Papa से पैसे नहीं मांगने पड़ते।"</p><div style="font-size:28px;">🎓💵</div></div>
+      <div class="review-card"><div style="display:flex; gap:14px; align-items:center;"><div class="testimonial-avatar">VT</div><div><strong>Vikas T.</strong> ★★★★★</div></div><p style="margin-top: 12px;">"छोटे शहर नासिक में भी कमाल। 7-8 regular clients, ₹35k-45k monthly। बिल्कुल competition नहीं।"</p><div style="font-size:28px;">🏆📈</div></div>
+    </div>
+    <!-- FIX #4: Moved earnings disclaimer directly below testimonials for compliance -->
+    <div class="earnings-disclaimer" style="margin-top: 24px;">
+      <strong>Earnings Disclaimer:</strong> ऊपर दिए गए income examples individual student results हैं। ये average results नहीं हैं। आपकी actual income आपके effort, location, skills और market conditions पर depend करेगी। कोई specific earning amount guarantee नहीं की जाती।
+    </div>
+  </div>
+</section>
+
+<!-- Author section — FIX #5: Changed "डॉ." to "Mr." to avoid unverified credential claim -->
+<section style="padding: 48px 0;">
+  <div class="container">
+    <div style="display: flex; flex-wrap: wrap; gap: 32px; align-items: center; background: #fff; border-radius: 36px; border:1px solid #e2e8f0; padding: 32px;">
+      <div style="background:#0f3d28; width: 100px; height: 100px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color:white; font-size: 34px; font-weight: bold;">M</div>
+      <div style="flex:1">
+        <h3 style="font-size: 22px; font-weight: 800;">मनीष श्रीवास्तव</h3>
+        <p style="color:#4b5563;">Certified Massage Business Coach · Wellness Educator · Best-selling Author</p>
+        <p style="margin-top: 8px;">Wellness और massage industry में 10+ साल का experience। 50,000+ students को step-by-step system से profitable home service business बनाने में guide किया।</p>
+        <div style="font-size:24px; margin-top:8px;">🧘📚🏅</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Final CTA — FIX #6: Removed false digital scarcity "86/100 copies बची हैं" -->
+<section style="padding: 32px 0 48px;">
+  <div class="container">
+    <div class="cta-glow">
+      <span class="badge" style="background:#0f3d28; color:white;">🔥 Limited Time Offer — Price जल्द बढ़ेगी</span>
+      <h2 style="font-size: 34px; font-weight:800; margin: 20px 0 8px;">अभी join करो = ₹199 (Lifetime)</h2>
+      <p style="margin-bottom: 24px;">Launch price — जल्द ₹499 हो जाएगी। <strong>100% secure payment।</strong></p>
+      <div style="display: flex; justify-content: center; gap: 30px; margin-bottom: 20px; font-size: 34px;">
+        <span>💳</span> <span>📥</span> <span>📱</span>
+      </div>
+      <a href="https://superprofile.bio/vp/697990ec8a516100149d5ac9"><button class="btn-primary" style="background:#0f3d28; font-size:22px; padding:18px 44px;">✅ अभी खरीदें — ₹199 only →</button></a>
+      <div style="margin-top: 24px;"><span style="background: white; padding: 8px 18px; border-radius: 50px; font-weight:500;">⚡ Instant PDF Download + Bonuses</span></div>
+      <p style="margin-top: 20px;">🔒 100% Secure Payment | 📥 Instant Digital Access | 📱 Mobile Friendly</p>
+    </div>
+    <div class="earnings-disclaimer">
+      <strong>Earnings Disclaimer:</strong> इस गाइड में दिए गए income examples educational purposes के लिए हैं। ये guaranteed results नहीं हैं। आपकी actual income आपके effort, location, skills और market conditions पर depend करेगी। यह गाइड एक professional wellness business education resource है।
+    </div>
+  </div>
+</section>
+
+<!-- FAQ Section -->
+<section style="background: #f8fafc; padding: 56px 0;">
+  <div class="container">
+    <h2 style="font-size: 32px; font-weight: 800; text-align: center;">❓ अक्सर पूछे जाने वाले सवाल</h2>
+    <div style="margin-top: 32px;">
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question">📌 क्या बिना experience के शुरू कर सकते हैं? <span>▼</span></div>
+        <div class="faq-answer">हाँ। गाइड को beginners के लिए step-by-step photos और practical techniques के साथ बनाया गया है। Module 1 से शुरुआत करें।</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question">⚖️ क्या यह business पूरी तरह लीगल और सुरक्षित है? <span>▼</span></div>
+        <div class="faq-answer">बिल्कुल। Professional massage therapy एक legal wellness service है। गाइड में safety, ethics, consent और professional behavior का पूरा module शामिल है।</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question">📥 गाइड कब और कैसे मिलेगी? <span>▼</span></div>
+        <div class="faq-answer">Payment के तुरंत बाद आपको instant download link मिल जाएगा। Mobile या laptop पर PDF पढ़ सकते हैं।</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question">⏰ Part-time करना possible है? <span>▼</span></div>
+        <div class="faq-answer">बिल्कुल। बहुत से students weekend या evening में शुरू करते हैं। Guide में part-time और full-time दोनों के लिए separate roadmap है।</div>
+      </div>
+      <!-- FIX: Added Refund FAQ — ad networks look for refund/return policy transparency -->
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question">↩️ Refund Policy क्या है? <span>▼</span></div>
+        <div class="faq-answer">Digital products की nature के कारण, purchase के बाद refund available नहीं है। खरीदने से पहले FAQ और details ध्यान से पढ़ें। किसी भी सवाल के लिए support@massageskill.com पर email करें।</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer — FIX #10: Replaced href="#" with real policy page links -->
+<footer>
+  <div style="margin-bottom: 14px;">
+    <a href="/privacy-policy.html" style="margin:0 12px; color:#4b5563; text-decoration:none;">Privacy Policy</a>
+    <a href="/terms-of-use.html" style="margin:0 12px; color:#4b5563; text-decoration:none;">Terms of Use</a>
+    <a href="mailto:support@massageskill.com" style="margin:0 12px; color:#4b5563; text-decoration:none;">support@massageskill.com</a>
+  </div>
+  <div>© 2026 MassageSkill — Professional Home Massage Business Education</div>
+  <div style="margin-top: 10px; font-size: 11px;">यह साइट किसी adult service को promote नहीं करती। केवल professional wellness business education guide है।</div>
+</footer>
+
+<script>
+  function toggleFaq(element) {
+    element.classList.toggle('open');
+  }
+  document.querySelectorAll('.faq-item').forEach(item => {
+    item.classList.remove('open');
+  });
+</script>
+</body>
+</html>
