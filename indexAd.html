@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>Ladies Massage Business Guide | होम मसाज शुरू करें | MassageSkill</title>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+    background: #ffffff;
+    color: #1e293b;
+    line-height: 1.5;
+    scroll-behavior: smooth;
+  }
+
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  /* badges & typography */
+  .badge {
+    display: inline-block;
+    background: #fef9c3;
+    color: #854d0e;
+    font-size: 13px;
+    font-weight: 700;
+    border-radius: 40px;
+    padding: 5px 16px;
+    margin-bottom: 20px;
+  }
+
+  .price-tag {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px 0;
+  }
+
+  .old-price {
+    font-size: 24px;
+    color: #94a3b8;
+    text-decoration: line-through;
+    font-weight: 500;
+  }
+
+  .new-price {
+    font-size: 48px;
+    font-weight: 800;
+    color: #0f3d28;
+    letter-spacing: -0.02em;
+  }
+
+  .discount-badge {
+    background: #dc2626;
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 40px;
+  }
+
+  /* buttons */
+  .btn-primary {
+    display: inline-block;
+    background: #0f3d28;
+    color: white;
+    font-weight: 700;
+    font-size: 19px;
+    padding: 16px 36px;
+    border-radius: 60px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 10px 22px rgba(15,61,40,0.25);
+    text-align: center;
+  }
+
+  .btn-primary:hover {
+    background: #0a2e1f;
+    transform: scale(1.02);
+  }
+
+  /* cards */
+  .grid-2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+  }
+
+  .card {
+    background: #fff;
+    border-radius: 24px;
+    padding: 24px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+    border: 1px solid #e9f0e6;
+  }
+
+  .pain-card, .module-card, .bonus-card, .review-card {
+    background: #fff;
+    border-radius: 24px;
+    padding: 22px;
+    border: 1px solid #e2e8f0;
+    transition: all 0.2s;
+  }
+
+  /* interactive image placeholders (emoji rich) */
+  .img-scene {
+    background: linear-gradient(135deg, #eef6f0 0%, #e0ebdf 100%);
+    border-radius: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 30px 20px;
+    margin: 24px 0;
+    font-size: 48px;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.05);
+  }
+  .img-scene span {
+    font-size: 18px;
+    font-weight: 600;
+    color: #1e4620;
+    background: rgba(255,255,240,0.7);
+    padding: 6px 18px;
+    border-radius: 60px;
+  }
+  .floating-icon {
+    animation: float 3s ease-in-out infinite;
+    display: inline-block;
+  }
+  @keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+    100% { transform: translateY(0px); }
+  }
+  .testimonial-avatar {
+    width: 52px;
+    height: 52px;
+    background: #0f3d28;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+  }
+  .stars {
+    color: #fbbf24;
+    letter-spacing: 2px;
+  }
+
+  /* faq */
+  .faq-item {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+    margin-bottom: 14px;
+    overflow: hidden;
+  }
+  .faq-question {
+    width: 100%;
+    text-align: left;
+    padding: 18px 24px;
+    font-weight: 700;
+    font-size: 16px;
+    background: white;
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+  }
+  .faq-answer {
+    padding: 0 24px 20px 24px;
+    display: none;
+    color: #475569;
+    border-top: 1px solid #f1f5f9;
+  }
+  .faq-item.open .faq-answer {
+    display: block;
+  }
+
+  /* cta section without refund mention */
+  .cta-glow {
+    background: linear-gradient(125deg, #f0f9f4 0%, #e4f0e8 100%);
+    border-radius: 36px;
+    padding: 48px 32px;
+    text-align: center;
+    border: 1px solid #cde3d4;
+  }
+
+  .earnings-disclaimer {
+    background: #fff7ed;
+    border-left: 5px solid #f97316;
+    padding: 16px 20px;
+    border-radius: 20px;
+    font-size: 12px;
+    color: #7c2d12;
+    margin-top: 32px;
+  }
+
+  footer {
+    background: #f8fafc;
+    border-top: 1px solid #e2e8f0;
+    padding: 32px 20px;
+    text-align: center;
+    font-size: 13px;
+    color: #64748b;
+  }
+
+  @media (max-width: 640px) {
+    .new-price { font-size: 36px; }
+    .btn-primary { font-size: 17px; padding: 14px 28px; }
+    .cta-glow { padding: 32px 20px; }
+    .img-scene { font-size: 32px; padding: 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Announcement bar (no refund mention) -->
+<div style="background: #0f3d28; color: white; text-align: center; padding: 10px; font-size: 13px; font-weight: 500;">
+  ⚡ सीमित समय ऑफर — अभी सिर्फ ₹199 में पूरा गाइड + 5 बोनस | 90% OFF
+</div>
+
+<!-- Simple Nav -->
+<nav style="display: flex; justify-content: space-between; align-items: center; padding: 16px 24px; border-bottom: 1px solid #e9eef3;">
+  <span style="font-weight: 800; font-size: 22px; color:#0f3d28;">💆‍♂️ MassageSkill</span>
+  <a href="https://superprofile.bio/vp/697990ec8a516100149d5ac9" style="background:#0f3d28; color:white; padding: 8px 20px; border-radius: 40px; font-weight:600; font-size:14px; text-decoration:none;">अभी खरीदें → ₹199</a>
+</nav>
+
+<!-- Hero Section with interactive image collage -->
+<section style="padding: 48px 0 32px; background: #ffffff;">
+  <div class="container" style="text-align: center;">
+    <div class="badge">✨ 50,000+ लोग सीख चुके हैं • अब ₹199 में (मूल्य ₹1,999)</div>
+    <h1 style="font-size: clamp(30px, 6vw, 52px); font-weight: 800; line-height: 1.2; margin-bottom: 16px;">
+      महिलाएं अपने घर बुला रही हैं <span style="color:#0f3d28;">Male Massager</span> को और Pay कर रही हैं <span style="color:#0f3d28;">₹2000–₹5000 Per Session</span>
+    </h1>
+    <p style="font-size: 19px; color: #334155; max-width: 680px; margin: 0 auto 20px;">और तुम बस ₹15k की job में फंसे हो... क्यों?</p>
+    
+       <div class="image-grid">
+      <img class="mas-img" src="./img/logo1.jpeg" alt="massageguide">
+      <img class="mas-img" src="./img/logo2.jpeg" alt="massageguide">
+      <img class="mas-img" src="./img/logo3.jpeg" alt="massageguide">
+    </div>
+
+    <!-- interactive visual: massage & money emoji scene -->
+    <div class="img-scene">
+      <span class="floating-icon">🧴✨</span>
+      <span class="floating-icon" style="animation-delay:0.2s;">💆‍♀️💵</span>
+      <span class="floating-icon" style="animation-delay:0.5s;">🏠💰</span>
+      <span>⬅️ होम सर्विस | प्रोफेशनल मसाज</span>
+    </div>
+    
+    <div class="price-tag">
+      <span class="old-price">₹1,999</span>
+      <span class="new-price">₹199</span>
+      <span class="discount-badge">90% OFF</span>
+    </div>
+    <a href="https://superprofile.bio/vp/697990ec8a516100149d5ac9">
+      <button class="btn-primary">✅ अभी गाइड प्राप्त करें → ₹199</button>
+    </a>
+    <div style="margin-top: 22px; display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; font-size: 14px; color: #2c3e2f; font-weight:500;">
+      <span>📄 4 PDFs</span> <span>📖 150+ Pages</span> <span>🌐 हिंदी+English</span> <span>📲 Instant Download</span>
+    </div>
+    
+    <!-- stats row -->
+    <div class="grid-2" style="margin-top: 44px; gap: 16px; grid-template-columns: repeat(4,1fr);">
+      <div class="card" style="text-align:center;"><div style="font-size: 30px; font-weight:800;">50k+</div><div>Students</div></div>
+      <div class="card" style="text-align:center;"><div style="font-size: 30px; font-weight:800;">150+</div><div>Pages</div></div>
+      <div class="card" style="text-align:center;"><div style="font-size: 30px; font-weight:800;">4+5</div><div>PDFs + Bonuses</div></div>
+      <div class="card" style="text-align:center;"><div style="font-size: 30px; font-weight:800;">⭐ 4.9</div><div>Student Rating</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Pain points / Reality check section with more images -->
+<section style="padding: 48px 0; background: #f9fefb;">
+  <div class="container">
+    <h2 style="font-size: 30px; font-weight: 800; text-align: center;">क्या तुम भी ₹10k-₹15k में जी रहे हो? <br> घर का खर्चा भी मुश्किल?</h2>
+    <div class="img-scene" style="background: #eef2e6; margin-top: 20px;">
+      <span>😫💸 बिना बचत</span> <span>🏚️😔 घर में टेंशन</span> <span>⏰ boring job</span> <span>🚶‍♂️ दोस्तों से पीछे</span>
+    </div>
+    <div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-02c262d elementor-widget elementor-widget-heading" data-id="02c262d" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+					<h2 class="elementor-heading-title elementor-size-default">क्या तुम्हारी भी यही हालत है?
+</h2>				</div>
+				</div>
+				<section class="elementor-section elementor-inner-section elementor-element elementor-element-99233f6 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="99233f6" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-50934bb" data-id="50934bb" data-element_type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-b957d40 elementor-widget__width-inherit elementor-widget elementor-widget-image" data-id="b957d40" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+															<img decoding="async" width="800" height="534" src="./indexss_files/ChatGPT-Image-Feb-4-2026-12_25_02-PM-1024x683.png" class="attachment-large size-large wp-image-1145" alt="" srcset="https://helpguide07.github.io/gotopage/indexss_files/ChatGPT-Image-Feb-4-2026-12_25_02-PM-1024x683.png 1024w, https://helpguide07.github.io/gotopage/indexss_files/ChatGPT-Image-Feb-4-2026-12_25_02-PM-300x200.png 300w, https://helpguide07.github.io/gotopage/indexss_files/ChatGPT-Image-Feb-4-2026-12_25_02-PM-768x512.png 768w, https://helpguide07.github.io/gotopage/indexss_files/ChatGPT-Image-Feb-4-2026-12_25_02-PM-600x400.png 600w, https://helpguide07.github.io/gotopage/indexss_files/ChatGPT-Image-Feb-4-2026-12_25_02-PM.png 1536w" sizes="(max-width: 800px) 100vw, 800px">															</div>
+				</div>
+				<div class="elementor-element elementor-element-128615a elementor-widget elementor-widget-heading" data-id="128615a" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+									</div>
+				<div class="elementor-element elementor-element-7fce830 elementor-widget elementor-widget-heading" data-id="7fce830" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+					<h2 class="elementor-heading-title elementor-size-default">Salary आते हीं खत्म,<br>कोई savings नहीं, emergency में loan लेना पड़ता हैं</h2>				</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-84e5e91" data-id="84e5e91" data-element_type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-15f97b0 elementor-widget__width-inherit elementor-widget elementor-widget-image" data-id="15f97b0" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+															<img decoding="async" width="800" height="534" src="./indexss_files/ChatGPT-Image-Feb-4-2026-12_34_07-PM-1024x683.png" class="attachment-large size-large wp-image-1147" alt="" srcset="https://helpguide07.github.io/gotopage/indexss_files/ChatGPT-Image-Feb-4-2026-12_34_07-PM-1024x683.png 1024w, https://helpguide07.github.io/gotopage/indexss_files/ChatGPT-Image-Feb-4-2026-12_34_07-PM-300x200.png 300w, https://helpguide07.github.io/gotopage/indexss_files/ChatGPT-Image-Feb-4-2026-12_34_07-PM-768x512.png 768w, https://helpguide07.github.io/gotopage/indexss_files/ChatGPT-Image-Feb-4-2026-12_34_07-PM-600x400.png 600w, https://helpguide07.github.io/gotopage/indexss_files/ChatGPT-Image-Feb-4-2026-12_34_07-PM.png 1536w" sizes="(max-width: 800px) 100vw, 800px">															</div>
+				</div>
+				<div class="elementor-element elementor-element-24bf2ee elementor-widget elementor-widget-heading" data-id="24bf2ee" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+					<h2 class="elementor-heading-title elementor-size-default"><img draggable="false" role="img" class="emoji" alt="😔" src="./indexss_files/1f614.svg"> घर में कोई इज्जत नहीं</h2>				</div>
+				</div>
+				<div class="elementor-element elementor-element-cc8315a elementor-widget elementor-widget-heading" data-id="cc8315a" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+					<h2 class="elementor-heading-title elementor-size-default">Papa हमेशा टेंशन में,<br> Mummy दुखी रहती है,<br>रिश्तेदार पूछते रहते "क्या करते हों?</h2>				</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-5b19a54" data-id="5b19a54" data-element_type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-e615c65 elementor-widget__width-inherit elementor-widget elementor-widget-image" data-id="e615c65" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+															<img loading="lazy" decoding="async" width="800" height="534" src="./indexss_files/ChatGPT-Image-Feb-4-2026-12_38_04-PM-1024x683.png" class="attachment-large size-large wp-image-1148" alt="" srcset="https://helpguide07.github.io/gotopage/indexss_files/ChatGPT-Image-Feb-4-2026-12_38_04-PM-1024x683.png 1024w, https://helpguide07.github.io/gotopage/indexss_files/ChatGPT-Image-Feb-4-2026-12_38_04-PM-300x200.png 300w, https://helpguide07.github.io/gotopage/indexss_files/ChatGPT-Image-Feb-4-2026-12_38_04-PM-768x512.png 768w, https://helpguide07.github.io/gotopage/indexss_files/ChatGPT-Image-Feb-4-2026-12_38_04-PM-600x400.png 600w, https://helpguide07.github.io/gotopage/indexss_files/ChatGPT-Image-Feb-4-2026-12_38_04-PM.png 1536w" sizes="(max-width: 800px) 100vw, 800px">															</div>
+				</div>
+				<div class="elementor-element elementor-element-6f61f0a elementor-widget elementor-widget-heading" data-id="6f61f0a" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+					<h2 class="elementor-heading-title elementor-size-default"> <img draggable="false" role="img" class="emoji" alt="💼" src="./indexss_files/1f4bc.svg"> Boring job में
+फंसे हो</h2>				</div>
+				</div>
+				<div class="elementor-element elementor-element-c6f11f1 elementor-widget elementor-widget-heading" data-id="c6f11f1" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+					<h2 class="elementor-heading-title elementor-size-default">रोज़ Boss की डांट,<br> Salary नहीं बढ़ती,<br>रोज़ same routine कोई मज़ा नहीं</h2>				</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-75e6112" data-id="75e6112" data-element_type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-1eaf293 elementor-widget__width-inherit elementor-widget elementor-widget-image" data-id="1eaf293" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+															<img loading="lazy" decoding="async" width="800" height="534" src="./indexss_files/ChatGPT-Image-Feb-4-2026-12_44_11-PM-1024x683.png" class="attachment-large size-large wp-image-1149" alt="" srcset="https://helpguide07.github.io/gotopage/indexss_files/ChatGPT-Image-Feb-4-2026-12_44_11-PM-1024x683.png 1024w, https://helpguide07.github.io/gotopage/indexss_files/ChatGPT-Image-Feb-4-2026-12_44_11-PM-300x200.png 300w, https://helpguide07.github.io/gotopage/indexss_files/ChatGPT-Image-Feb-4-2026-12_44_11-PM-768x512.png 768w, https://helpguide07.github.io/gotopage/indexss_files/ChatGPT-Image-Feb-4-2026-12_44_11-PM-600x400.png 600w, https://helpguide07.github.io/gotopage/indexss_files/ChatGPT-Image-Feb-4-2026-12_44_11-PM.png 1536w" sizes="(max-width: 800px) 100vw, 800px">															</div>
+				</div>
+				<div class="elementor-element elementor-element-3325128 elementor-widget elementor-widget-heading" data-id="3325128" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+					<h2 class="elementor-heading-title elementor-size-default"><img draggable="false" role="img" class="emoji" alt="😟" src="./indexss_files/1f61f.svg"> दोस्तों से पीछे
+रह गए हो
+</h2>				</div>
+				</div>
+				<div class="elementor-element elementor-element-cb78d1f elementor-widget elementor-widget-heading" data-id="cb78d1f" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+					<h2 class="elementor-heading-title elementor-size-default">वो Car में घूमते है तुम bus में,<br> वो apni girlfriend के साथ घूम रहे, तुम अकेले हो</h2>				</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+					</div>
+</section>
+
+<!-- Vision / Imagine (interactive card) -->
+<section style="padding: 56px 0;">
+  <div class="container">
+    <div style="background:#eef2e6; border-radius: 40px; padding: 40px 28px;">
+      <div class="img-scene" style="background:transparent; box-shadow:none; justify-content: flex-start; gap: 12px; margin:0 0 12px 0; padding:0;">
+        <span>📱💬 "Bhaiya 12 बजे free? ₹3000 दूंगी"</span> <span>💆‍♂️✨</span> <span>💰🤑</span>
+      </div>
+      <h2 style="font-size: 30px; font-weight: 800;">Imagine करो... सुबह 10 बजे उठते हो (No 7 AM alarm!)</h2>
+      <p style="font-size: 17px; margin-top: 20px;"><strong>WhatsApp पे देखते हो :</strong> "Bhaiya 12 बजे free हो? 1 घंटा फुल बॉडी मसाज चाहिए ₹3000 दूंगी।"<br> बड़ा सा घर, AC Room, और एक सुन्दर लेडी सामने। Full Body massage देते हो, वो बहुत खुश। ₹3000 cash हाथ में।</p>
+      <p style="margin-top: 16px;">शाम को फिर दूसरी लेडी का call: ₹2500 — और दिन की कमाई ₹5500। Mummy को देते हो, उनको इतना खुश देखते हो। यही तो चाहिए था ना? <strong>यह बिलकुल सच हो सकता है।</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- What’s inside Guide (modules) with image banner -->
+<section style="background: #f9fefb; padding: 56px 0;">
+  <div class="container">
+    <h2 style="font-size: 32px; font-weight: 800; text-align: center;">इस ई-बुक में क्या मिलेगा?</h2>
+    <div class="img-scene" style="margin: 20px 0;">
+      <span>📘 स्टेप बाय स्टेप</span> <span>📸 फोटो गाइड</span> <span>💡 प्रो टेक्निक्स</span>
+    </div>
+    <div class="grid-2" style="margin-top: 20px; gap: 20px;">
+      <div class="module-card"><span style="background:#0f3d28; color:white; padding:2px 14px; border-radius:40px;">01</span><h3 style="margin: 14px 0 6px;">प्रोफेशनल मसाज टेक्निक्स</h3><p>स्टेप-बाय-स्टेप फोटो गाइड: बैक, नेक, शोल्डर, फुल बॉडी मसाज।</p></div>
+      <div class="module-card"><span style="background:#0f3d28; color:white; padding:2px 14px; border-radius:40px;">02</span><h3 style="margin: 14px 0 6px;">होम सर्विस बिजनेस सेटअप</h3><p>Clients कैसे ढूंढें? Pricing ₹2000-₹5000, local marketing, FB groups, WhatsApp.</p></div>
+      <div class="module-card"><span style="background:#0f3d28; color:white; padding:2px 14px; border-radius:40px;">03</span><h3 style="margin: 14px 0 6px;">सेफ्टी, एथिक्स और बाउंड्रीज़</h3><p>महिलाओं के घर safely जाने के guidelines, professional boundaries, consent.</p></div>
+      <div class="module-card"><span style="background:#0f3d28; color:white; padding:2px 14px; border-radius:40px;">04</span><h3 style="margin: 14px 0 6px;">क्लाइंट रिटेंशन & रेफरल्स</h3><p>Regular clients कैसे बनाएं, follow-up system, referral program setup.</p></div>
+      <div class="module-card"><span style="background:#0f3d28; color:white; padding:2px 14px; border-radius:40px;">05</span><h3 style="margin: 14px 0 6px;">स्केलिंग रोडमैप</h3><p>0 से ₹30k (पहले 30 दिन) और ₹30k से ₹60k+ (2-3 महीने) का clear roadmap.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Bonuses (5 free) with interactive bonus icons -->
+<section style="padding: 56px 0;">
+  <div class="container">
+    <div style="text-align: center;"><span class="badge" style="background:#fef3c7;">🎁 5 FREE BONUSES (value ₹3,000+)</span></div>
+    <h2 style="font-size: 30px; font-weight: 800; text-align: center;">₹199 में मिलेगी पूरी किट + बोनस</h2>
+    <div class="img-scene" style="margin: 20px 0;">
+      <span>📢 व्हाट्सऐप टेम्पलेट्स</span> <span>📊 ट्रैकर शीट</span> <span>🎯 मार्केटिंग आइडियाज</span>
+    </div>
+    <div class="grid-2" style="margin-top: 28px;">
+      <div class="bonus-card"><span style="font-weight:800; font-size:18px;">📢 बोनस 1</span> <strong>Communication Pack</strong> — 20+ WhatsApp templates, phone call scripts (Hindi/English)</div>
+      <div class="bonus-card"><span style="font-weight:800; font-size:18px;">📊 बोनस 2</span> <strong>Business Growth Tracker</strong> — Daily client sheet, income calculator, expense template</div>
+      <div class="bonus-card"><span style="font-weight:800; font-size:18px;">📌 बोनस 3</span> <strong>Marketing Checklist</strong> — 50+ local ideas, Justdial, Sulekha listing guide</div>
+      <div class="bonus-card"><span style="font-weight:800; font-size:18px;">💎 बोनस 4</span> <strong>Premium Upgrade Guide</strong> — Aromatherapy, hot stone, ₹2k+ per session secrets</div>
+      <div class="bonus-card"><span style="font-weight:800; font-size:18px;">👥 बोनस 5</span> <strong>Lifetime Community Access</strong> — Private WhatsApp group, weekly Q&A, networking</div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials (real stories) with student images -->
+<section style="background: #f9fefb; padding: 56px 0;">
+  <div class="container">
+    <h2 style="font-size: 32px; font-weight: 800; text-align: center;">50,000+ लोगों की Life बदली... असली कहानियाँ</h2>
+    <div class="grid-2" style="margin-top: 32px;">
+      <div class="review-card"><div style="display:flex; gap:14px; align-items:center;"><div class="testimonial-avatar">AS</div><div><strong>Amit S.</strong> ★★★★★</div></div><p style="margin-top: 12px;">"1 साल बेरोजगार था। ₹199 रिस्क लिया। 2 महीने में 10+ clients, ₹50k+ monthly। Papa को गर्व!"</p><div style="font-size:28px; margin-top:8px;">💪💰</div></div>
+      <div class="review-card"><div style="display:flex; gap:14px; align-items:center;"><div class="testimonial-avatar">RK</div><div><strong>Rohit K.</strong> ★★★★★</div></div><p style="margin-top: 12px;">"₹12k की जॉब छोड़ दी। अब 9-12 regular clients, ₹48k-55k monthly। आज़ादी, अपना बॉस।"</p><div style="font-size:28px;">🚀😎</div></div>
+      <div class="review-card"><div style="display:flex; gap:14px; align-items:center;"><div class="testimonial-avatar">SP</div><div><strong>Sunil P.</strong> ★★★★☆</div></div><p style="margin-top: 12px;">"College student, सिर्फ weekend पर। ₹35k-40k महीने। Papa से पैसे नहीं मांगने पड़ते।"</p><div style="font-size:28px;">🎓💵</div></div>
+      <div class="review-card"><div style="display:flex; gap:14px; align-items:center;"><div class="testimonial-avatar">VT</div><div><strong>Vikas T.</strong> ★★★★★</div></div><p style="margin-top: 12px;">"छोटे शहर नासिक में भी कमाल। 7-8 regular clients, ₹35k-45k monthly। बिल्कुल competition नहीं।"</p><div style="font-size:28px;">🏆📈</div></div>
+    </div>
+    <p style="font-size: 12px; text-align: center; margin-top: 24px; color: #6b7280;">* Real student results — individual results vary based on effort & location.</p>
+  </div>
+</section>
+
+<!-- Author section with photo feel -->
+<section style="padding: 48px 0;">
+  <div class="container">
+    <div style="display: flex; flex-wrap: wrap; gap: 32px; align-items: center; background: #fff; border-radius: 36px; border:1px solid #e2e8f0; padding: 32px;">
+      <div style="background:#0f3d28; width: 100px; height: 100px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color:white; font-size: 34px; font-weight: bold;">डॉ.M</div>
+      <div style="flex:1"><h3>डॉ. मनीष श्रीवास्तव</h3><p style="color:#4b5563;">Massage Business Coach · Wellness Expert · Best-selling Author</p><p>Wellness और massage industry में 10+ साल। 50,000+ students को step-by-step system से profitable home service business बनाने में guide किया।</p><div style="font-size:24px; margin-top:8px;">🧘‍♂️📚🏅</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Final CTA with scarcity (no money-back guarantee mention) -->
+<section style="padding: 32px 0 48px;">
+  <div class="container">
+    <div class="cta-glow">
+      <span class="badge" style="background:#0f3d28; color:white;">🔥 PRICE बढ़ने वाली है — सिर्फ 86/100 copies बची हैं</span>
+      <h2 style="font-size: 34px; font-weight:800; margin: 20px 0 8px;">अभी join करो = ₹199 (Lifetime)</h2>
+      <p style="margin-bottom: 24px;">बाद में = ₹499 pay करना पड़ेगा। <strong>कोई रिस्क नहीं</strong> — 100% secure payment</p>
+      <!-- Interactive icon row -->
+      <div style="display: flex; justify-content: center; gap: 30px; margin-bottom: 20px; font-size: 34px;">
+        <span>💳</span> <span>📥</span> <span>📱</span>
+      </div>
+      <a href="https://superprofile.bio/vp/697990ec8a516100149d5ac9"><button class="btn-primary" style="background:#0f3d28; font-size:22px; padding:18px 44px;">✅ अभी खरीदें — ₹199 only →</button></a>
+      <div style="margin-top: 24px;"><span style="background: white; padding: 8px 18px; border-radius: 50px; font-weight:500;">⚡ Instant PDF Download + Bonuses</span></div>
+      <p style="margin-top: 20px;">🔒 100% Secure Payment | 📥 Instant Digital Access | 📱 Mobile Friendly</p>
+    </div>
+    <!-- Earnings disclaimer - compliant without refund guarantee text -->
+    <div class="earnings-disclaimer">
+      <strong>Earnings Disclaimer:</strong> इस गाइड में दिए गए income examples और testimonials individual results हैं। ये average results नहीं हैं। आपकी actual income आपके effort, location, skills और market conditions पर depend करेगी। कोई specific earning amount guarantee नहीं की जाती। यह गाइड educational और informational purposes के लिए है। यह किसी भी adult service को promote नहीं करता, बल्कि एक professional wellness business education guide है।
+    </div>
+  </div>
+</section>
+
+<!-- FAQ Section -->
+<section style="background: #f8fafc; padding: 56px 0;">
+  <div class="container">
+    <h2 style="font-size: 32px; font-weight: 800; text-align: center;">❓ अक्सर पूछे जाने वाले सवाल</h2>
+    <div style="margin-top: 32px;">
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question">📌 क्या बिना experience के शुरू कर सकते हैं? <span>▼</span></div>
+        <div class="faq-answer">हाँ। गाइड को beginners के लिए step-by-step photos और practical techniques के साथ बनाया गया है। Module 1 से शुरुआत करें।</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question">⚖️ क्या यह business पूरी तरह लीगल और सुरक्षित है? <span>▼</span></div>
+        <div class="faq-answer">बिल्कुल। Professional massage therapy एक legal wellness service है। गाइड में safety, ethics, consent और professional behavior का पूरा module शामिल है।</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question">📥 गाइड कब और कैसे मिलेगी? <span>▼</span></div>
+        <div class="faq-answer">Payment के तुरंत बाद आपको instant download link मिल जाएगा। Mobile या laptop पर PDF पढ़ सकते हैं।</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question">⏰ Part-time करना possible है? <span>▼</span></div>
+        <div class="faq-answer">बिल्कुल। बहुत से students weekend या evening में शुरू करते हैं। Guide में part-time और full-time दोनों के लिए separate roadmap है।</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div style="margin-bottom: 14px;">
+    <a href="#" style="margin:0 12px; color:#4b5563; text-decoration:none;">Privacy Policy</a>
+    <a href="#" style="margin:0 12px; color:#4b5563; text-decoration:none;">Terms of Use</a>
+    <a href="mailto:support@massageskill.com" style="margin:0 12px; color:#4b5563; text-decoration:none;">support@massageskill.com</a>
+  </div>
+  <div>© 2026 MassageSkill — Professional Home Massage Business Education</div>
+  <div style="margin-top: 10px; font-size: 11px;">यह साइट किसी adult service को promote नहीं करती। केवल professional wellness business guide है।</div>
+</footer>
+
+<script>
+  function toggleFaq(element) {
+    element.classList.toggle('open');
+  }
+  document.querySelectorAll('.faq-item').forEach(item => {
+    item.classList.remove('open');
+  });
+</script>
+</body>
+</html>
