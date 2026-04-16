@@ -260,10 +260,8 @@ body {
 <p style="margin-bottom:10px; color:#16a34a; font-weight:600;"><center>
 🔥 87 लोग अभी इस गाइड को देख रहे हैं</center>
 </p>
-	
-<img src="//tsyndicate.com/api/v2/cpa/316790/pixel.gif?goalid=0" width="1" height="1" style="display:none;" />
 
-<!-- Announcement bar (no refund mention) -->
+	<!-- Announcement bar (no refund mention) -->
 <div style="background: #0f3d28; color: white; text-align: center; padding: 10px; font-size: 13px; font-weight: 500;">
   ⚡ सीमित समय ऑफर — अभी सिर्फ ₹199 में पूरा गाइड + 5 बोनस | 90% OFF
 </div>
@@ -491,6 +489,17 @@ body {
   <div>© 2026 MassageSkill — Professional Home Massage Business Education</div>
   <div style="margin-top: 10px; font-size: 11px;">यह साइट किसी adult service को promote नहीं करती। केवल professional wellness business guide है।</div>
 </footer>
+	<script>
+(function () {
+  const params = new URLSearchParams(window.location.search);
+  const clickId = params.get("clickid");
+
+  if (clickId) {
+    localStorage.setItem("ts_clickid", clickId);
+  }
+})();
+</script>
+	
 <script>
 let isRedirecting = false;
 
@@ -503,16 +512,21 @@ function trackAndRedirect(event) {
   if (isRedirecting) return;
   isRedirecting = true;
 
-  var checkoutUrl = "https://superprofile.bio/vp/697990ec8a516100149d5ac9";
-  var isMobile = /iPhone|Android/i.test(navigator.userAgent);
+  const checkoutUrl = "https://superprofile.bio/vp/697990ec8a516100149d5ac9";
+  const clickId = localStorage.getItem("ts_clickid");
 
-  var img = new Image();
-  img.src = "//tsyndicate.com/api/v2/cpa/316790/pixel.gif?goalid=1";
+  let finalUrl = checkoutUrl;
+  if (clickId) {
+    const separator = checkoutUrl.includes("?") ? "&" : "?";
+    finalUrl = checkoutUrl + separator + "clickid=" + encodeURIComponent(clickId);
+  }
+
+  const isMobile = /iPhone|Android/i.test(navigator.userAgent);
 
   if (isMobile) {
-    window.location.href = checkoutUrl;
+    window.location.href = finalUrl;
   } else {
-    window.open(checkoutUrl, "_blank", "noopener,noreferrer");
+    window.open(finalUrl, "_blank", "noopener,noreferrer");
   }
 
   setTimeout(function () {
