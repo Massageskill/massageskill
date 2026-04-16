@@ -54,7 +54,7 @@
     <p class="small" id="status">Tracking conversion...</p>
   </div>
 
-  <script>
+<script>
 (function () {
   const TRAFFICSTARS_KEY = "4oqHpkDPxDFfaw5rFXvcrpUghCiYIGkt4kip";
   const GOAL_ID = "0";
@@ -77,16 +77,18 @@
     "&goalid=" + encodeURIComponent(GOAL_ID) +
     "&key=" + encodeURIComponent(TRAFFICSTARS_KEY);
 
+  statusEl.textContent = "Tracking click ID: " + clickId;
+
   setTimeout(() => {
     fetch(postbackUrl, {
       method: "GET",
       mode: "no-cors"
     })
     .then(() => {
-      statusEl.textContent = "Conversion tracking sent.";
+      statusEl.textContent = "Tracking request attempted for click ID: " + clickId;
     })
     .catch(() => {
-      statusEl.textContent = "Tracking request attempted.";
+      statusEl.textContent = "Tracking request attempted for click ID: " + clickId;
     });
   }, 300);
 })();
