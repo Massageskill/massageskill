@@ -270,7 +270,7 @@ body {
 <!-- Simple Nav -->
 <nav style="display: flex; justify-content: space-between; align-items: center; padding: 16px 24px; border-bottom: 1px solid #e9eef3;">
   <span style="font-weight: 800; font-size: 22px; color:#0f3d28;">💆‍♂️ MassageSkill</span>
-  <a href="https://superprofile.bio/vp/697990ec8a516100149d5ac9"></a><button type="button" class="btn-primary" onclick="trackAndRedirect()" style="padding: 8px 20px; font-size:14px;">
+  <button type="button" class="btn-primary" onclick="trackAndRedirect()" style="padding: 8px 20px; font-size:14px;">
   अभी खरीदें → ₹199</button>
 </nav>
 
@@ -303,7 +303,6 @@ body {
       <span class="new-price">₹199</span>
       <span class="discount-badge">90% OFF</span>
     </div>
-    <a href="https://superprofile.bio/vp/697990ec8a516100149d5ac9"></a>
     <button type="button" class="btn-primary" onclick="trackAndRedirect()">
   ✅ अभी गाइड प्राप्त करें → ₹199
 </button>
@@ -434,7 +433,7 @@ body {
       <div style="display: flex; justify-content: center; gap: 30px; margin-bottom: 20px; font-size: 34px;">
         <span>💳</span> <span>📥</span> <span>📱</span>
       </div>
-      <a href="https://superprofile.bio/vp/697990ec8a516100149d5ac9"></a><button class="btn-primary" onclick="trackAndRedirect()" style="background:#0f3d28; font-size:22px; padding:18px 44px;">✅ अभी खरीदें — ₹199 only →</button>
+      <button class="btn-primary" onclick="trackAndRedirect()" style="background:#0f3d28; font-size:22px; padding:18px 44px;">✅ अभी खरीदें — ₹199 only →</button>
       <div style="margin-top: 24px;"><span style="background: white; padding: 8px 18px; border-radius: 50px; font-weight:500;">⚡ Instant PDF Download + Bonuses</span></div>
       <p style="margin-top: 20px;">🔒 100% Secure Payment | 📥 Instant Digital Access | 📱 Mobile Friendly</p>
     </div>
@@ -481,17 +480,19 @@ body {
   <div style="margin-top: 10px; font-size: 11px;">यह साइट किसी adult service को promote नहीं करती। केवल professional wellness business guide है।</div>
 </footer>
 <script>
-function trackAndRedirect() {
+function trackAndRedirect(event) {
+  if (event) {
+    event.preventDefault();
+    event.stopPropagation();
+  }
+
   var checkoutUrl = "https://superprofile.bio/vp/697990ec8a516100149d5ac9";
 
-  // ✅ Open new tab instantly (user action)
   var newTab = window.open(checkoutUrl, "_blank", "noopener,noreferrer");
 
-  // ✅ Fire tracking AFTER opening
   var img = new Image();
   img.src = "//tsyndicate.com/api/v2/cpa/316790/pixel.gif?goalid=1";
 
-  // ✅ Fallback (if popup blocked)
   if (!newTab) {
     window.location.href = checkoutUrl;
   }
