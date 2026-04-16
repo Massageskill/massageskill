@@ -481,27 +481,21 @@ body {
   <div style="margin-top: 10px; font-size: 11px;">यह साइट किसी adult service को promote नहीं करती। केवल professional wellness business guide है।</div>
 </footer>
 <script>
-  function toggleFaq(element) {
-    element.classList.toggle('open');
+function trackAndRedirect() {
+  var checkoutUrl = "https://superprofile.bio/vp/697990ec8a516100149d5ac9";
+
+  // ✅ Open new tab instantly (user action)
+  var newTab = window.open(checkoutUrl, "_blank", "noopener,noreferrer");
+
+  // ✅ Fire tracking AFTER opening
+  var img = new Image();
+  img.src = "//tsyndicate.com/api/v2/cpa/316790/pixel.gif?goalid=1";
+
+  // ✅ Fallback (if popup blocked)
+  if (!newTab) {
+    window.location.href = checkoutUrl;
   }
-
-  document.querySelectorAll('.faq-item').forEach(item => {
-    item.classList.remove('open');
-  });
-
-  function trackAndRedirect() {
-    var checkoutUrl = "https://superprofile.bio/vp/697990ec8a516100149d5ac9";
-
-    var img = new Image();
-    img.src = "//tsyndicate.com/api/v2/cpa/316790/pixel.gif?goalid=1";
-
-    setTimeout(function() {
-      var newTab = window.open(checkoutUrl, "_blank", "noopener,noreferrer");
-      if (!newTab) {
-        window.location.href = checkoutUrl;
-      }
-    }, 300);
-  }
+}
 </script>
 </body>
 </html>
