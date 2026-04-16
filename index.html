@@ -282,7 +282,9 @@
       <span class="discount-badge">90% OFF</span>
     </div>
     <a href="https://superprofile.bio/vp/697990ec8a516100149d5ac9">
-      <button class="btn-primary">✅ अभी गाइड प्राप्त करें → ₹199</button>
+      <button class="btn-primary" onclick="trackAndRedirect()">
+  ✅ अभी गाइड प्राप्त करें → ₹199
+</button>
     </a>
     <div style="margin-top: 22px; display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; font-size: 14px; color: #2c3e2f; font-weight:500;">
       <span>📄 4 PDFs</span> <span>📖 150+ Pages</span> <span>🌐 हिंदी+English</span> <span>📲 Instant Download</span>
@@ -455,9 +457,21 @@
   function toggleFaq(element) {
     element.classList.toggle('open');
   }
+
   document.querySelectorAll('.faq-item').forEach(item => {
     item.classList.remove('open');
   });
+
+  // 🔥 TRACKING FUNCTION (TrafficStars)
+  function trackAndRedirect() {
+    var img = new Image();
+    img.src = "//tsyndicate.com/api/v2/cpa/316790/pixel.gif?goalid=1";
+
+    // Delay to ensure tracking fires
+    setTimeout(function() {
+      window.location.href = "https://superprofile.bio/vp/697990ec8a516100149d5ac9";
+    }, 300);
+  }
 </script>
 </body>
 </html>
