@@ -77,10 +77,12 @@
         "&goalid=" + encodeURIComponent(GOAL_ID) +
         "&key=" + encodeURIComponent(TRAFFICSTARS_KEY);
 
-      fetch(postbackUrl, {
-        method: "GET",
-        mode: "no-cors"
-      })
+     setTimeout(() => {
+  fetch(postbackUrl, {
+    method: "GET",
+    mode: "no-cors"
+  });
+}, 300);
       .then(() => {
         statusEl.textContent = "Conversion tracking sent.";
       })
