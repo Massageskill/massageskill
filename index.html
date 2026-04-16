@@ -270,8 +270,9 @@ body {
 <!-- Simple Nav -->
 <nav style="display: flex; justify-content: space-between; align-items: center; padding: 16px 24px; border-bottom: 1px solid #e9eef3;">
   <span style="font-weight: 800; font-size: 22px; color:#0f3d28;">💆‍♂️ MassageSkill</span>
-  <button type="button" class="btn-primary" onclick="trackAndRedirect()" style="padding: 8px 20px; font-size:14px;">
-  अभी खरीदें → ₹199</button>
+ <button type="button" class="btn-primary" onclick="trackAndRedirect(event)" style="padding: 8px 20px; font-size:14px;">
+  अभी खरीदें → ₹199
+</button>
 </nav>
 
 <!-- Hero Section with interactive image collage -->
@@ -303,10 +304,9 @@ body {
       <span class="new-price">₹199</span>
       <span class="discount-badge">90% OFF</span>
     </div>
-    <button type="button" class="btn-primary" onclick="trackAndRedirect()">
+    <button type="button" class="btn-primary" onclick="trackAndRedirect(event)">
   ✅ अभी गाइड प्राप्त करें → ₹199
 </button>
-    
     <div style="margin-top: 22px; display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; font-size: 14px; color: #2c3e2f; font-weight:500;">
       <span>📄 4 PDFs</span> <span>📖 150+ Pages</span> <span>🌐 हिंदी+English</span> <span>📲 Instant Download</span>
     </div>
@@ -332,9 +332,9 @@ body {
 </section>
 
 	<div class="sticky">
-  <button type="button" class="btn-primary" onclick="trackAndRedirect()">
-    ⚡ ₹199 में अभी खरीदें
-  </button>
+ <button type="button" class="btn-primary" onclick="trackAndRedirect(event)">
+  ⚡ ₹199 में अभी खरीदें
+</button>
 </div>
 	
   <!-- REAL INDIAN AUNTIES & BOYS IMAGES - additional authentic visual -->
@@ -751,8 +751,9 @@ body {
 <!-- Simple Nav -->
 <nav style="display: flex; justify-content: space-between; align-items: center; padding: 16px 24px; border-bottom: 1px solid #e9eef3;">
   <span style="font-weight: 800; font-size: 22px; color:#0f3d28;">💆‍♂️ MassageSkill</span>
-  <button type="button" class="btn-primary" onclick="trackAndRedirect()" style="padding: 8px 20px; font-size:14px;">
-  अभी खरीदें → ₹199</button>
+  <<button type="button" class="btn-primary" onclick="trackAndRedirect(event)" style="background:#0f3d28; font-size:22px; padding:18px 44px;">
+  ✅ अभी खरीदें — ₹199 only →
+</button>
 </nav>
 
 <!-- Hero Section with interactive image collage -->
@@ -784,7 +785,7 @@ body {
       <span class="new-price">₹199</span>
       <span class="discount-badge">90% OFF</span>
     </div>
-    <button type="button" class="btn-primary" onclick="trackAndRedirect()">
+    <button type="button" class="btn-primary" onclick="trackAndRedirect(event)">
   ✅ अभी गाइड प्राप्त करें → ₹199
 </button>
     
@@ -813,7 +814,7 @@ body {
 </section>
 
 	<div class="sticky">
-  <button type="button" class="btn-primary" onclick="trackAndRedirect()">
+  <button type="button" class="btn-primary" onclick="trackAndRedirect(event)">
     ⚡ ₹199 में अभी खरीदें
   </button>
 </div>
@@ -961,22 +962,27 @@ body {
   <div style="margin-top: 10px; font-size: 11px;">यह साइट किसी adult service को promote नहीं करती। केवल professional wellness business guide है।</div>
 </footer>
 <script>
+let isRedirecting = false;
+
 function trackAndRedirect(event) {
   if (event) {
     event.preventDefault();
     event.stopPropagation();
   }
 
-  var checkoutUrl = "https://superprofile.bio/vp/697990ec8a516100149d5ac9";
+  if (isRedirecting) return;
+  isRedirecting = true;
 
-  var newTab = window.open(checkoutUrl, "_blank", "noopener,noreferrer");
+  var checkoutUrl = "https://superprofile.bio/vp/697990ec8a516100149d5ac9";
 
   var img = new Image();
   img.src = "//tsyndicate.com/api/v2/cpa/316790/pixel.gif?goalid=1";
 
-  if (!newTab) {
-    window.location.href = checkoutUrl;
-  }
+  window.open(checkoutUrl, "_blank", "noopener,noreferrer");
+
+  setTimeout(function () {
+    isRedirecting = false;
+  }, 1500);
 }
 </script>
 </body>
