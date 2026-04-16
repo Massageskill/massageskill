@@ -55,41 +55,41 @@
   </div>
 
   <script>
-    (function () {
-      const TRAFFICSTARS_KEY = "PASTE_YOUR_NEW_KEY_HERE";
-      const GOAL_ID = "0";
+(function () {
+  const TRAFFICSTARS_KEY = "YOUR_REAL_NEW_KEY";
+  const GOAL_ID = "0";
 
-      const params = new URLSearchParams(window.location.search);
-      const urlClickId = params.get("clickid");
-      const storedClickId = localStorage.getItem("ts_clickid");
-      const clickId = urlClickId || storedClickId;
+  const params = new URLSearchParams(window.location.search);
+  const urlClickId = params.get("clickid");
+  const storedClickId = localStorage.getItem("ts_clickid");
+  const clickId = urlClickId || storedClickId;
 
-      const statusEl = document.getElementById("status");
+  const statusEl = document.getElementById("status");
 
-      if (!clickId) {
-        statusEl.textContent = "No click ID found. Conversion could not be tracked.";
-        return;
-      }
+  if (!clickId) {
+    statusEl.textContent = "No click ID found. Conversion could not be tracked.";
+    return;
+  }
 
-      const postbackUrl =
-        "https://tsyndicate.com/api/v1/cpa/action?clickid=" +
-        encodeURIComponent(clickId) +
-        "&goalid=" + encodeURIComponent(GOAL_ID) +
-        "&key=" + encodeURIComponent(TRAFFICSTARS_KEY);
+  const postbackUrl =
+    "https://tsyndicate.com/api/v1/cpa/action?clickid=" +
+    encodeURIComponent(clickId) +
+    "&goalid=" + encodeURIComponent(GOAL_ID) +
+    "&key=" + encodeURIComponent(TRAFFICSTARS_KEY);
 
-     setTimeout(() => {
-  fetch(postbackUrl, {
-    method: "GET",
-    mode: "no-cors"
-  });
-}, 300);
-      .then(() => {
-        statusEl.textContent = "Conversion tracking sent.";
-      })
-      .catch(() => {
-        statusEl.textContent = "Tracking request attempted.";
-      });
-    })();
-  </script>
+  setTimeout(() => {
+    fetch(postbackUrl, {
+      method: "GET",
+      mode: "no-cors"
+    })
+    .then(() => {
+      statusEl.textContent = "Conversion tracking sent.";
+    })
+    .catch(() => {
+      statusEl.textContent = "Tracking request attempted.";
+    });
+  }, 300);
+})();
+</script>
 </body>
 </html>
